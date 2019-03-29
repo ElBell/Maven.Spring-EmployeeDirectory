@@ -1,4 +1,4 @@
-package io.zipcoder;
+package io.zipcoder.persistenceapp;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
