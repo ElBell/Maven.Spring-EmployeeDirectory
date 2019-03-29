@@ -68,11 +68,6 @@ public class EntityController {
         return entityService.findByDepartment(departmentId);
     }
 
-
-    public List<Employee> findAllUnder(Employee employee) {
-        return entityService.findAllUnder(employee);
-    }
-
     @DeleteMapping("/employees/remove/")
     public void removeEmployees(@RequestBody Employee ... employees) {
         entityService.removeEmployees(employees);

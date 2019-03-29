@@ -7,9 +7,7 @@ import io.zipcoder.persistenceapp.repositories.DepartmentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 @Service
 public class EntityService {
@@ -72,18 +70,6 @@ public class EntityService {
     }
     public List<Employee> findByDepartment(int departmentId) {
         return employeeRepository.findByDepartment(departmentRepository.findOne(departmentId));
-    }
-
-    public List<Employee> findAllUnder(Employee employee) {
-        List<Employee> employees = new ArrayList<>();
-        boolean hasEmployees;
-        do {
-            hasEmployees = false;
-            if (findAllManagers(employee.getNumber()).size() > 0) {
-                hasEmployees = true;
-            }
-        } while (hasEmployees);
-        return employees;
     }
 
     public void removeEmployees(Employee ... employees) {
